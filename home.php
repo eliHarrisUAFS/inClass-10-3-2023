@@ -35,36 +35,36 @@
                 </tbody>        
             </table>       
         </div>
-        <div class="col-sm-4">
-            <div class="card">
-                <div class="card-body">
-                    <h5 class="card-title">Add Book</h5>
-                    <p class="card-text">Add a new book to the list.</p>
-                    <form action="home.php" method="POST">
-                    <label for="ISBN" class="form-label">ISBN</label>
-                        <input type="text" class="form-control mb-3" id="ISBN" name="ISBN" placeholder="Enter ISBN" required>
-                        <label for="Title" class="form-label">Title</label>
-                        <input type="text" class="form-control mb-3" id="Title" name="Title" placeholder="Enter a Title" required>
-                        <input type="submit" name="button" class="btn btn-primary w-100"></input>
-                        <?php
-                            if (isset($_POST['ISBN']) && isset($_POST['Title']) && isset($_POST['button'])) {
-                                $isbn = $_POST['ISBN'];
-                                $title = $_POST['Title'];
-                                $title_file = fopen("title.txt", "a");
-                                $isbn_file = fopen("isbn.txt", "a");
-                                fwrite($title_file, "\n$title");
-                                fwrite($isbn_file, "\n$isbn");
-                                fclose($title_file);
-                                fclose($isbn_file);
-                                header("Refresh:0");
-                            }
-                        ?>
-                    </form>
-                </div>
-            </div>      
+            <div class="col-sm-4">
+                <div class="card">
+                    <div class="card-body">
+                        <h5 class="card-title">Add Book</h5>
+                        <p class="card-text">Add a new book to the list.</p>
+                        <form action="home.php" method="POST">
+                        <label for="ISBN" class="form-label">ISBN</label>
+                            <input type="text" class="form-control mb-3" id="ISBN" name="ISBN" placeholder="Enter ISBN" required>
+                            <label for="Title" class="form-label">Title</label>
+                            <input type="text" class="form-control mb-3" id="Title" name="Title" placeholder="Enter a Title" required>
+                            <input type="submit" name="button" class="btn btn-primary w-100"></input>
+                            <?php
+                                if (isset($_POST['ISBN']) && isset($_POST['Title']) && isset($_POST['button'])) {
+                                    $isbn = $_POST['ISBN'];
+                                    $title = $_POST['Title'];
+                                    $title_file = fopen("title.txt", "a");
+                                    $isbn_file = fopen("isbn.txt", "a");
+                                    fwrite($title_file, "\n$title");
+                                    fwrite($isbn_file, "\n$isbn");
+                                    fclose($title_file);
+                                    fclose($isbn_file);
+                                    header("Refresh:0");
+                                    exit;
+                                }
+                            ?>
+                        </form>
+                    </div>
+                </div>      
+            </div>
         </div>
-        </div>
- 
     </div>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
   </body>
