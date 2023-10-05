@@ -9,7 +9,6 @@
   <body>
     <nav class="navbar navbar-dark bg-dark" style="margin-bottom: 20px">
     <a class="navbar-brand" href="#">
-        <img src="images/lion.png" width="12%" height="12%" class="d-inline-block align-middle" alt="">
         GET YA BOOKS
     </a>
     </nav>
