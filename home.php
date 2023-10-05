@@ -1,16 +1,16 @@
 <!doctype html>
-<html lang="en">
+<html lang="en" data-bs-theme="dark">
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>CS 2033 | Home</title>
+    <title>WELCOME TO THE LIBRARY</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
   </head>
   <body>
-    <nav class="navbar navbar-light bg-light" style="margin-bottom: 20px">
+    <nav class="navbar navbar-dark bg-dark" style="margin-bottom: 20px">
     <a class="navbar-brand" href="#">
         <img src="images/lion.png" width="12%" height="12%" class="d-inline-block align-middle" alt="">
-        CS 2033 Web Systems
+        GET YA BOOKS
     </a>
     </nav>
     <div class="container">
@@ -19,7 +19,7 @@
             <table class="table table-bordered table-striped">
                 <thead><tr><th>ISBN</th><th>Title</th></tr></thead>
                 <tbody>
-                    <?php
+                    <?php   
                         $title = "title.txt";
                         $isbn = "isbn.txt";
                         $title_content = file_get_contents($title);
