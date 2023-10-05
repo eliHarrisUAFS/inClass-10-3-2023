@@ -1,16 +1,3 @@
-<?php
-    if (isset($_POST['ISBN']) && isset($_POST['Title']) && isset($_POST['button'])) {
-        $isbn = $_POST['ISBN'];
-        $title = $_POST['Title'];
-        $title_file = fopen("title.txt", "a");
-        $isbn_file = fopen("isbn.txt", "a");
-        fwrite($title_file, "\n$title");
-        fwrite($isbn_file, "\n$isbn");
-        fclose($title_file);
-        fclose($isbn_file);
-        header("Refresh:0");
-    }
-?>
 <!doctype html>
 <html lang="en">
   <head>
@@ -59,6 +46,19 @@
                         <label for="Title" class="form-label">Title</label>
                         <input type="text" class="form-control mb-3" id="Title" name="Title" placeholder="Enter a Title" required>
                         <input type="submit" name="button" class="btn btn-primary w-100"></input>
+                        <?php
+                            if (isset($_POST['ISBN']) && isset($_POST['Title']) && isset($_POST['button'])) {
+                                $isbn = $_POST['ISBN'];
+                                $title = $_POST['Title'];
+                                $title_file = fopen("title.txt", "a");
+                                $isbn_file = fopen("isbn.txt", "a");
+                                fwrite($title_file, "\n$title");
+                                fwrite($isbn_file, "\n$isbn");
+                                fclose($title_file);
+                                fclose($isbn_file);
+                                header("Refresh:0");
+                            }
+                        ?>
                     </form>
                 </div>
             </div>      
